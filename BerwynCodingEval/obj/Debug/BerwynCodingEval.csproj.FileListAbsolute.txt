@@ -1,0 +1,6 @@
+c:\users\mike\documents\visual studio 2017\Projects\BerwynCodingEval\BerwynCodingEval\bin\Debug\BerwynCodingEval.exe.config
+c:\users\mike\documents\visual studio 2017\Projects\BerwynCodingEval\BerwynCodingEval\bin\Debug\BerwynCodingEval.exe
+c:\users\mike\documents\visual studio 2017\Projects\BerwynCodingEval\BerwynCodingEval\bin\Debug\BerwynCodingEval.pdb
+c:\users\mike\documents\visual studio 2017\Projects\BerwynCodingEval\BerwynCodingEval\obj\Debug\BerwynCodingEval.csprojResolveAssemblyReference.cache
+c:\users\mike\documents\visual studio 2017\Projects\BerwynCodingEval\BerwynCodingEval\obj\Debug\BerwynCodingEval.exe
+c:\users\mike\documents\visual studio 2017\Projects\BerwynCodingEval\BerwynCodingEval\obj\Debug\BerwynCodingEval.pdb
