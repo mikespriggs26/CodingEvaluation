@@ -36,6 +36,7 @@ namespace BerwynCodingEval
 
                 }
             }
+            //Calculates the total number of entries for all columns in all rows
             int totalValues = listA.Count + listB.Count + listC.Count + listD.Count;
 
             Console.WriteLine("The total number of values is: " + totalValues);
