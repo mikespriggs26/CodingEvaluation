@@ -11,13 +11,14 @@ namespace BerwynCodingEval
     {
         static void Main(string[] args)
         {
+            int ValMax = 0;
+            string greatestGUID = "";
+
+            List<string> listGUID = new List<string>();
+            List<string> listVal1 = new List<string>();
+            List<string> listVal2 = new List<string>();
+            List<string> listVal3 = new List<string>();
             
-
-            List<string> listA = new List<string>();
-            List<string> listB = new List<string>();
-            List<string> listC = new List<string>();
-            List<string> listD = new List<string>();
-
             using (var reader = new StreamReader("test.csv"))
             {
 
@@ -25,43 +26,80 @@ namespace BerwynCodingEval
                 {
                     var lines = reader.ReadLine();
                     var values = lines.Split(',');
-                    listA.Add(values[0]);
-                    listB.Add(values[1]);
-                    listC.Add(values[2]);
-                    listD.Add(values[3]);
+                    listGUID.Add(values[0]);
+                    listVal1.Add(values[1]);
+                    listVal2.Add(values[2]);
+                    listVal3.Add(values[3]);
 
 
+                    
+                    
+                    
 
 
 
                 }
             }
-            //Calculates the total number of entries for all columns in all rows
-            int totalValues = listA.Count + listB.Count + listC.Count + listD.Count;
+            
+            
+            
+            //Finds the greatest sum of Val1 + Val2
+            for (int i = 2; i < listVal1.Count; i++)
+            {
+                //int ValSum = 0;
+                string Val1Value = listVal1[i].Replace('"', ' ').Trim();
+                string Val2Value = listVal2[i].Replace('"', ' ').Trim();
+                int Val1Int = Int32.Parse(Val1Value);
+                int Val2Int = Int32.Parse(Val2Value);
+                //Console.WriteLine(Val1Int + " " + Val2Int);
+                int ValSum = Val1Int + Val2Int;
+                if(ValSum > ValMax)
+                {
+                    ValMax = ValSum;
+                    greatestGUID = listGUID[i].Replace('"', ' ').Trim();
+                }
+                
+            }
+            Console.WriteLine("The greatest sum of Val1 and Val2 is: "+ ValMax);
+            Console.WriteLine("The corresponding GUID is: " + greatestGUID);
+            
 
+
+            //Calculates the total number of entries for all columns in all rows
+            int totalValues = listGUID.Count + listVal2.Count + listVal3.Count + listVal3.Count;
             Console.WriteLine("The total number of values is: " + totalValues);
+
+
 
             //checking for duplicate GUIDs
             var duplicates = new List<string>();
             var hashset = new HashSet<string>();
-            foreach (var item in listA)
+            foreach (var item in listGUID)
             {
                 if (!hashset.Add(item))
                 {
                     duplicates.Add(item);
-                    Console.WriteLine(item + "is a duplicate GUID.");
+                    Console.WriteLine(item.Replace('"', ' ').Trim() + " is a duplicate GUID.");
 
                 }
             }
             //calculates the average of all Val3 entries
-            int listDLength = 0;
-            int count = 1;
-            foreach(var item in listD)
+            int listVal3Length = 0;
+            int count = 0;
+            foreach(var item in listVal3)
             {
-                listDLength += item.Length;
+                listVal3Length += item.Length;
                 count++;
+                
             }
-            Console.WriteLine("The average is :" + listDLength/count);
+            Console.WriteLine(listVal3Length);
+            Console.WriteLine(count);
+            Console.WriteLine("The average is: " + listVal3Length/count);
+
+            
+
+
+
             
             
             
