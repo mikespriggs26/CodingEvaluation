@@ -13,6 +13,12 @@ namespace BerwynCodingEval
         {
             int ValMax = 0;
             string greatestGUID = "";
+            int ValSum = 0;
+            string Val1Value = "";
+            string Val2Value = "";
+            int Val1Int = 0;
+            int Val2Int = 0;
+            var lines = "";
 
             List<string> listGUID = new List<string>();
             List<string> listVal1 = new List<string>();
@@ -24,7 +30,7 @@ namespace BerwynCodingEval
 
                 while (!reader.EndOfStream)
                 {
-                    var lines = reader.ReadLine();
+                    lines = reader.ReadLine();
                     var values = lines.Split(',');
                     listGUID.Add(values[0]);
                     listVal1.Add(values[1]);
@@ -43,16 +49,16 @@ namespace BerwynCodingEval
             
             
             
+            
             //Finds the greatest sum of Val1 + Val2
             for (int i = 2; i < listVal1.Count; i++)
             {
-                //int ValSum = 0;
-                string Val1Value = listVal1[i].Replace('"', ' ').Trim();
-                string Val2Value = listVal2[i].Replace('"', ' ').Trim();
-                int Val1Int = Int32.Parse(Val1Value);
-                int Val2Int = Int32.Parse(Val2Value);
-                //Console.WriteLine(Val1Int + " " + Val2Int);
-                int ValSum = Val1Int + Val2Int;
+                
+                Val1Value = listVal1[i].Replace('"', ' ').Trim();
+                Val2Value = listVal2[i].Replace('"', ' ').Trim();
+                Val1Int = Int32.Parse(Val1Value);
+                Val2Int = Int32.Parse(Val2Value);
+                ValSum = Val1Int + Val2Int;
                 if(ValSum > ValMax)
                 {
                     ValMax = ValSum;
@@ -60,6 +66,7 @@ namespace BerwynCodingEval
                 }
                 
             }
+
             Console.WriteLine("The greatest sum of Val1 and Val2 is: "+ ValMax);
             Console.WriteLine("The corresponding GUID is: " + greatestGUID);
             
@@ -92,27 +99,50 @@ namespace BerwynCodingEval
                 count++;
                 
             }
-            Console.WriteLine(listVal3Length);
-            Console.WriteLine(count);
             Console.WriteLine("The average is: " + listVal3Length/count);
 
-            
+
+            StreamWriter writer = new StreamWriter("outputFile.csv");
+            //using (writer)
+            //{
+            //for (int i = 0; i < 4; i++)
+            int counter = 0;
+            foreach(var line in lines)
+            {
+                Val1Value = listVal1[line].Replace('"', ' ').Trim();
+                Val2Value = listVal2[line].Replace('"', ' ').Trim();
+                Val1Int = Int32.Parse(Val1Value);
+                Val2Int = Int32.Parse(Val2Value);
+                ValSum = Val1Int + Val2Int;
+                //int sum = Int32.Parse(listVal1[line]) + Int32.Parse(listVal2[line]);
+                Console.Write(listGUID[line]);
+                Console.Write(",");
+                Console.Write(ValSum);
+                Console.WriteLine();
+                Console.WriteLine(counter);
+                counter++;
+                   
+            }
+
+
+            //}
 
 
 
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             //checking for largest Val1
             //int highVal1 = 0;
             //foreach (var item in listA)
@@ -135,7 +165,7 @@ namespace BerwynCodingEval
             //Console.WriteLine(highVal1);
 
 
-           
+
         }
     }
 }
