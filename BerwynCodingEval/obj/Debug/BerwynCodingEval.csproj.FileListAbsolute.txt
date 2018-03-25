@@ -4,3 +4,4 @@ c:\users\mike\documents\visual studio 2017\Projects\BerwynCodingEval\BerwynCodin
 c:\users\mike\documents\visual studio 2017\Projects\BerwynCodingEval\BerwynCodingEval\obj\Debug\BerwynCodingEval.csprojResolveAssemblyReference.cache
 c:\users\mike\documents\visual studio 2017\Projects\BerwynCodingEval\BerwynCodingEval\obj\Debug\BerwynCodingEval.exe
 c:\users\mike\documents\visual studio 2017\Projects\BerwynCodingEval\BerwynCodingEval\obj\Debug\BerwynCodingEval.pdb
+C:\Users\Mike\documents\visual studio 2017\Projects\BerwynCodingEval\BerwynCodingEval\bin\Debug\outputFile.csv
